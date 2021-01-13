@@ -1,21 +1,55 @@
-import React from 'react';
-import { StyleSheet, Text, ScrollView, View, } from 'react-native';
+import { useIsFocused, useNavigation } from '@react-navigation/native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, ScrollView, View, Alert } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { fetchOrders } from '../api';
 import Header from '../Header';
-import OrderdCard from '../OrderCard';
+import OrderCard from '../OrderCard';
+import { Order } from '../types';
 
-export default function Orders() {
 
-  
+function Orders() {
+  const [orders, setOrders] = useState<Order[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigation = useNavigation();
+  const isFocused = useIsFocused();
+
+  const fetchData = () => {
+    setIsLoading(true);
+    fetchOrders()
+      .then(response => setOrders(response.data))
+      .catch(() => Alert.alert('Houve um erro ao buscar os pedidos!'))
+      .finally(() => setIsLoading(false));
+  }
+
+  useEffect(() => {
+    if (isFocused) {
+      fetchData();
+    }
+  }, [isFocused]);
+
+  const handleOnPress = (order: Order) => {
+    navigation.navigate('OrderDetails', {
+      order
+    });
+  }
+
   return (
     <>
     <Header />
     <ScrollView style={styles.container}>
-      <OrderdCard />
-      <OrderdCard />
-      <OrderdCard />
-      <OrderdCard />
-      <OrderdCard />
-      <OrderdCard />
+      {isLoading ? (
+        <Text style={styles.text}>Buscando pedidos...</Text>
+      ) : (
+        orders.map(order => (
+          <TouchableWithoutFeedback
+           key={order.id} 
+           onPress={() => handleOnPress(order)}
+           >
+            <OrderCard  order={order} />
+          </TouchableWithoutFeedback>
+        ))
+      )}
     </ScrollView>
     </>
   );
@@ -25,5 +59,17 @@ export default function Orders() {
     container: {
       paddingRight: '5%',
       paddingLeft: '5%',
+    },
+    text: {    
+      paddingTop: 15,
+      paddingBottom: 15,
+      paddingLeft: 50,
+      paddingRight: 50,
+      fontWeight: 'bold',
+      fontSize: 18,
+      letterSpacing: -0.24,
+      fontFamily: 'OpenSans_700Bold'  
     }
   });
+
+  export default Orders;

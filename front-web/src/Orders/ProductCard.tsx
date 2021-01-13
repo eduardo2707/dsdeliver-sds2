@@ -16,7 +16,6 @@ function ProductCard( { product, onSelectProduct, isSelected }: Props){
             onClick={() => onSelectProduct(product)}
         >
              
-
             <h3 className="order-card-title">
                 {product.name}
             </h3>
