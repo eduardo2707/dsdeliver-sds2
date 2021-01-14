@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "front-mobile",
-    "slug": "front-mobile",
+    "name": "dsdeliver-mobile",
+    "slug": "dsdeliver-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "A delivery system application, done in the DevSuperior week",
+    "githubUrl": "https://github.com/eduardo2707/dsdeliver-sds2"
   }
 }
