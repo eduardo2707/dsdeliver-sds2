@@ -46,7 +46,7 @@ que quando aberto lista todos os pedidos e consegue abrir o google maps ja selec
 ## Clonar o projeto:
 ```bash
  #clonar repositório
-  git clone https://github.com/eduardo2707/dsdeliver-sds2.git
+ git clone https://github.com/eduardo2707/dsdeliver-sds2.git
 ```
 
 ## Instalar o Java
