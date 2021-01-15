@@ -49,16 +49,12 @@ que quando aberto lista todos os pedidos e consegue abrir o google maps ja selec
   git clone https://github.com/eduardo2707/dsdeliver-sds2.git
 ```
 
-## Instalando o Java
+## Instalar o Java
 ```bash
 sudo apt install openjdk-11-jdk
-```
 
-## Instalando o Java
-```bash
-sudo apt install openjdk-11-jdk
 ```
-## Instalando o NPM/NodeJS
+## Instalar o NPM/NodeJS
 No site:
 https://nodejs.org/en/
 
