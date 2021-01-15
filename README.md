@@ -43,34 +43,34 @@ que quando aberto lista todos os pedidos e consegue abrir o google maps ja selec
 
 # Como executar o projeto
 
-## Back end
-Pré-requisitos: Java 11
-
+## Clonar o projeto:
 ```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds2
-
-# entrar na pasta do projeto back end
-cd backend
-
-# executar o projeto
-./mvnw spring-boot:run
+ #clonar repositório
+  git clone https://github.com/eduardo2707/dsdeliver-sds2.git
 ```
 
-## Front end web
-Pré-requisitos: npm / yarn
-
+## Instalando o Java
 ```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds2
+sudo apt install openjdk-11-jdk
+```
 
-# entrar na pasta do projeto front end web
-cd front-web
+## Instalando o Java
+```bash
+sudo apt install openjdk-11-jdk
+```
+## Instalando o NPM/NodeJS
+No site:
+https://nodejs.org/en/
 
-# instalar dependências
+Por linha de comando:
+```bash
 npm install
+```
 
-# executar o projeto
+## Executando o projeto
+
+Ir na página do projeto (backend, front-end-web ou front-end-mobile) e executar o comando:
+```bash
 npm start
 ```
 
