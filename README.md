@@ -68,10 +68,10 @@ git clone https://github.com/devsuperior/sds2
 cd front-web
 
 # instalar dependências
-yarn install
+npm install
 
 # executar o projeto
-yarn start
+npm start
 ```
 
 # Autor
